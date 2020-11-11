@@ -96,23 +96,16 @@
 
 ## 2. 運作流程
 
-#### Step1. 使用者輸入測試檔名稱(input.txt)
-
-#### Step2. 開檔並讀檔
-
-#### Step3. 以字串為單位讀取檔案資料, 並檢查是否有資料遺漏
-
-#### Step4. 若測試檔資料無誤則建立相鄰串列
-
-#### Step5. 執行DFS走訪
-
-#### Step6. 執行Dijkstra演算法
-
-#### Step7. 輸出兩個結果
+- Step1. 使用者輸入測試檔名稱(input.txt)
+- Step2. 開檔並讀檔
+- Step3. 以字串為單位讀取檔案資料, 並檢查是否有資料遺漏
+- Step4. 若測試檔資料無誤則建立相鄰串列
+- Step5. 執行DFS走訪
+- Step6. 執行Dijkstra演算法
+- Step7. 輸出兩個結果
 
 ## 3. 執行方式
-![Uploading file..._7yo3sm2cx]()
-
+![](https://i.imgur.com/c85QHpp.png)
 
 # *Shortest Path*
 
