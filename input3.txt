@@ -1,0 +1,11 @@
+CIRCUIT avqlarge
+INSTANCE S  PAD
+   N8(7,i) N1(10,o) N2(5,o)
+INSTANCE t  ai2s
+   N1(10,i) N4(3,i) N3(2,o) N5(1,o)
+INSTANCE y  i1s
+   N2(5,i) N3(2,i) N4(3,o) N6(9,o) N7(2,o)
+INSTANCE x  ai2s
+   N5(1,i) N6(9,i) N10(6,i) N9(4,o)
+INSTANCE z  ai2s
+   N7(2,i) N9(4,i) N8(7,o) N10(6,o)
