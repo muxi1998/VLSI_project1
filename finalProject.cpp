@@ -407,7 +407,11 @@ class Tool {
 		
 		// assert: expect edges
 		str = GetToken() ;
+<<<<<<< HEAD
         while( str != "INSTANCE" && str != "ENDCIRCUIT" && str != "" ) {
+=======
+        while( str != "INSTANCE" && str != "ENDCIRCUIT" ) {
+>>>>>>> 47358c517164b6bada808aa2b3279c92d4ee5f5d
 			Edge edge = getEdge( str, v.name ) ;
 			if ( edge.name != "" ) {
 				v.edges.push_back( edge ) ;
@@ -428,6 +432,7 @@ class Tool {
     	str = GetToken() ;
     	if ( str == "CIRCUIT" ) {
     		str = GetToken() ; // the next token after "CIRCUIT" must be the name
+<<<<<<< HEAD
     		if ( str == "INSTANCE" ) {
     			cout << "### Error: Missing circuit name! ###" << endl << endl ;
     			return false ;
@@ -458,6 +463,32 @@ class Tool {
 		    cout << "### Error: Missing token <CIRCUIT> in the input file! ###" << endl << endl ;
 		    return false ;
 	    } // else()
+=======
+    		if ( str == "INSTANCE") {
+    			cout << "### Error: Missing circuit name! ###" << endl << endl ;
+    			return false ;
+		} // if()
+		else {
+			if ( pureStr( str ) ) {
+				circuitName = str ;
+			} // if()
+		} // else()
+			
+		str = GetToken() ; // the next token after the circuit name must be "INSTANCE"
+		while ( str == "INSTANCE" ) {
+			str = Instance() ;
+		} // while()
+    		
+    		if ( str == "ENDCIRCUIT" ) {
+    			return true ;
+		} // if()
+    		
+	} // if()
+	else {
+		cout << "### Error: Missing token <CIRCUIT> in the input file! ###" << endl << endl ;
+		return false ;
+	} // else()
+>>>>>>> 47358c517164b6bada808aa2b3279c92d4ee5f5d
     } // Circuit()
     
     bool checkEdges() {
@@ -543,6 +574,7 @@ class Tool {
       	clear() ;
       	gr.DFS() ;
       	gr.Dijkstra() ;
+<<<<<<< HEAD
       	
       	cout << "*************  Result - start *************" << endl << endl ;
    	    gr.printDFSResult() ;
@@ -556,6 +588,11 @@ class Tool {
 	  	cout << "### Error: Something is wrong in the file! ###" << endl << endl ;
 	  	gr.clear() ;
 	  	clear() ;
+=======
+	  } // if()
+	  else {
+	  	cout << "### Error: Something is wrong in the file! ###" << endl << endl ;
+>>>>>>> 47358c517164b6bada808aa2b3279c92d4ee5f5d
 	  	closeFile() ;
 	  } // else()
       
@@ -568,7 +605,11 @@ class Tool {
 
       ch = skipSpace() ;
       
+<<<<<<< HEAD
       while ( !finish && ch != EOF ) {
+=======
+      while ( !finish ) {
+>>>>>>> 47358c517164b6bada808aa2b3279c92d4ee5f5d
         if ( !isSpace( ch ) ) {
           ch = file.get() ;
           str += ch ;
@@ -615,6 +656,16 @@ int main() {
     tool.openFile() ;
     tool.readFile() ;
     tool.closeFile() ;
+<<<<<<< HEAD
+=======
+  
+    cout << "*************  Result - start *************" << endl << endl ;
+    gr.printDFSResult() ;
+    cout << "-------------------------------------------" << endl << endl ;
+    gr.printDijkstraResult() ;
+    cout << endl << "**************  Result - end  **************" << endl << endl ;
+    gr.clear() ;  	
+>>>>>>> 47358c517164b6bada808aa2b3279c92d4ee5f5d
     
     cout << "Please enter a number (0)Quit (1)Continue: " ;
     cin >> command ;
